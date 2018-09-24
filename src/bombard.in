@@ -22,7 +22,8 @@ my $rund    = $opt_l;
 my $runs    = $opt_r ? $opt_r : 10;
 my $start   = $opt_s;
 my $length  = $opt_t ? $opt_t : 5;
-my $header  = $opt_H ? "-H \"$opt_H\"" : "";
+# my $header  = $opt_H ? "-H \"$opt_H\"" : "";
+my $header  = $opt_H ? substr($opt_H, 0, 3) eq "-H " ? "$opt_H" : "-H \"$opt_H\"" : "";
 my $version = "bombard-%_VERSION% [build %_DATE%]\n";
 my $siege   = "%_SIEGE%";
 
